@@ -15,8 +15,10 @@
                 <TextBlock Margin="3" >windowDemo</TextBlock>
                 <Button Content="Refrash" Click="button1_Click" 
                         Height="20"  x:Name="button1" Margin="3"/>
+                <RichTextBox Name="tbMain" Margin="3" ></RichTextBox>
             </DockPanel>
-            <RichTextBox Name="tbMain" Margin="3" ></RichTextBox>
+
+            <Grid Name="mainGrid" Margin="3" Background="White"></Grid>
         </DockPanel>
     </Grid>
 </UserControl>
