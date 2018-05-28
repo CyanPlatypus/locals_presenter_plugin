@@ -60,37 +60,42 @@ namespace WindowVSIX
             tbMain.Document.Blocks.Clear();
         }
 
-        public void DrawNodes(List<Node> nodes)
+        //public void DrawNodes(List<Node> nodes)
+        //{
+        //    Graph graph = new Graph();
+
+        //    nodes.ForEach(n=>DrawNode(n, graph));
+
+        //    graph.Attr.LayerDirection = LayerDirection.LR;
+        //    graph.Attr.SimpleStretch = false;
+        //    graph.Attr.AspectRatio = 1;
+
+        //    graphViewer.Graph = graph;
+        //}
+
+        public void DrawGraph(Graph graph)
         {
-            Graph graph = new Graph();
-
-            nodes.ForEach(n=>DrawNode(n, graph));
-
-            graph.Attr.LayerDirection = LayerDirection.TB;
-            graph.Attr.SimpleStretch = false;
-            graph.Attr.AspectRatio = 1;
-
             graphViewer.Graph = graph;
         }
 
-        protected void DrawNode(Node n, Graph graph)
-        {
-            if (n == null) return;
-            //do not draw what already was drawn
-            if (graph.Nodes.Any(nn => nn.Id == n.Id))
-                return;
+        //protected void DrawNode(Node n, Graph graph)
+        //{
+        //    if (n == null) return;
+        //    //do not draw what already was drawn
+        //    if (graph.Nodes.Any(nn => nn.Id == n.Id))
+        //        return;
 
-            Microsoft.Msagl.Drawing.Node
-                newNode = new Microsoft.Msagl.Drawing.Node(n.Id) {LabelText = n.Caption ?? "?"};
-            newNode.Attr.FillColor = Color.LightGray;
-            //font font size
-            //newNode.Label.FontSize = 11;
-            graph.AddNode(newNode);
-            //if (parent != null)
-            //    graph.AddEdge(parent.Id, n.Id);
+        //    Microsoft.Msagl.Drawing.Node
+        //        newNode = new Microsoft.Msagl.Drawing.Node(n.Id) {LabelText = n.Caption ?? "?"};
+        //    //newNode.Attr.FillColor = Color.LightGray;
+        //    //font font size
+        //    //newNode.Label.FontSize = 11;
+        //    graph.AddNode(newNode);
+        //    //if (parent != null)
+        //    //    graph.AddEdge(parent.Id, n.Id);
 
-            n.ChildNodes.ForEach(chN=>DrawNode(chN, graph));
-            n.ChildNodes.ForEach(chN => graph.AddEdge(n.Id, chN.Id));
-        }
+        //    n.ChildNodes.ForEach(chN=>DrawNode(chN, graph));
+        //    n.ChildNodes.ForEach(chN => graph.AddEdge(n.Id, chN.Id));
+        //}
     }
 }

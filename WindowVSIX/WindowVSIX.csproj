@@ -54,6 +54,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Logic\DrawManager.cs" />
+    <Compile Include="Logic\LocalsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="windowDemo.cs" />
     <Compile Include="windowDemoCommand.cs" />

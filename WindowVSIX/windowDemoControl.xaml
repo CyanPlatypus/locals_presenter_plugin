@@ -12,10 +12,13 @@
     <Grid>
         <DockPanel LastChildFill="True" Background="Thistle">
             <DockPanel DockPanel.Dock="Top">
-                <TextBlock Margin="3" >windowDemo</TextBlock>
-                <Button Content="Refrash" Click="button1_Click" 
+
+                <Button Width="50" Content="↻" Click="button1_Click" 
                         Height="20"  x:Name="button1" Margin="3"/>
-                <RichTextBox Name="tbMain" Margin="3" ></RichTextBox>
+                <!--<TextBlock Margin="3" >LocalsPresenter</TextBlock>-->
+                <Button Margin="3" Width="50" DockPanel.Dock="Right" >→</Button>
+                <Button Margin="3" Width="50" DockPanel.Dock="Right">←</Button>
+                <RichTextBox Name="tbMain" Margin="3" Visibility="Hidden" ></RichTextBox>
             </DockPanel>
 
             <Grid Name="mainGrid" Margin="3" Background="White"></Grid>
